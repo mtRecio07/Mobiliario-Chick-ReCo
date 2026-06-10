@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiliario Chick | Design & Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="main-header">
+    <div class="header-top">
+        <div class="header-item left">
+            <button class="icon-btn desktop-only">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button class="icon-btn mobile-only" id="menu-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="header-item center">
+            <h1 class="brand-name">MOBILIARIO CHICK</h1>
+        </div>
+
+        <div class="header-item right">
+            <a href="#carrito" class="icon-btn cart-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="nav-categories desktop-only">
+        <a href="#">NEW IN</a>
+        <a href="#">LIVING</a>
+        <a href="#">COMEDOR</a>
+        <a href="#">DORMITORIO</a>
+        <a href="#">DISEÑO IA</a>
+        <a href="#">SALE</a>
+    </nav>
+
+    <nav class="mobile-nav" id="mobile-menu">
+        <div class="mobile-search-container">
+            <div class="search-bar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Buscar productos...">
+            </div>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#">NEW IN</a>
+            <a href="#">LIVING</a>
+            <a href="#">COMEDOR</a>
+            <a href="#">DORMITORIO</a>
+            <a href="#">DISEÑO IA</a>
+            <a href="#">SALE</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <button class="btn-primary">VER COLECCIÓN</button>
+        </div>
+    </section>
+
+    <section class="content-spacer">
+        <h2>CALIDAD CORDOBESA</h2>
+        <p>Bajá para ver cómo el header cambia a fondo blanco y texto negro.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

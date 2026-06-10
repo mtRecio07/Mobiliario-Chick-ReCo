@@ -1,0 +1,173 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ESTADOS DE VISIBILIDAD --- */
+.mobile-only { display: none !important; }
+.desktop-only { display: flex !important; }
+
+/* --- HEADER BASE (ESCRITORIO) --- */
+#main-header {
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    padding: 35px 50px;
+    transition: all 0.4s ease;
+    background-color: transparent;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-header.scrolled, #main-header.menu-open {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 15px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-name {
+    font-weight: 200;
+    font-size: 2.2rem;
+    letter-spacing: 12px;
+    text-align: center;
+}
+
+.header-item.right { display: flex; justify-content: flex-end; }
+
+.icon-btn, .cart-link, .nav-categories a {
+    background: none; border: none; color: inherit;
+    cursor: pointer; text-decoration: none; transition: color 0.3s;
+}
+
+.nav-categories {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 25px;
+}
+
+.nav-categories a {
+    font-size: 0.7rem; letter-spacing: 2.5px;
+    font-weight: 400; text-transform: uppercase;
+}
+
+/* --- HERO & SPACER --- */
+.hero {
+    width: 100%; height: 100vh;
+    background-image: url('panel.png'); background-size: cover; background-position: center;
+    display: flex; align-items: flex-end; justify-content: center; padding-bottom: 120px;
+}
+
+.btn-primary {
+    background: transparent; border: 1px solid #fff; color: #fff;
+    padding: 14px 45px; font-family: 'Montserrat'; letter-spacing: 3px;
+    cursor: pointer; transition: 0.3s;
+}
+
+.content-spacer { height: 150vh; padding: 100px 50px; text-align: center; }
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: block !important; }
+    
+    #main-header { padding: 20px; flex-direction: row; }
+    .brand-name { font-size: 1.3rem; letter-spacing: 4px; }
+
+    .mobile-nav {
+        display: none; flex-direction: column; background: white;
+        position: absolute; top: 100%; left: 0; width: 100%;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    }
+    .mobile-nav.active { display: flex; }
+
+    .mobile-search-container {
+        padding: 20px; display: flex; justify-content: center; background: #f9f9f9;
+    }
+    .search-bar {
+        background: white; border-radius: 50px; padding: 10px 20px;
+        display: flex; align-items: center; gap: 10px; width: 90%; border: 1px solid #eee;
+    }
+    .search-bar input { border: none; outline: none; width: 100%; font-family: 'Montserrat'; }
+
+    .mobile-menu-links { display: flex; flex-direction: column; gap: 25px; padding: 35px; text-align: center; }
+    .mobile-nav a { color: black; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+}
+
+.mobile-only, 
+.mobile-nav, 
+#menu-toggle,
+.mobile-search-container { 
+    display: none !important; 
+}
+
+/* Mostramos lo de escritorio */
+.desktop-only { 
+    display: flex !important; 
+}
+
+/* --- 2. REGLAS PARA CELULAR (MAX-WIDTH: 768PX) --- */
+@media (max-width: 768px) {
+    /* Escondemos lo de PC */
+    .desktop-only { 
+        display: none !important; 
+    }
+    
+    /* Mostramos iconos de móvil */
+    .mobile-only,
+    #menu-toggle { 
+        display: block !important; 
+    }
+
+    /* El menú móvil SOLO existe si está activo */
+    .mobile-nav.active { 
+        display: flex !important; 
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    }
+
+    /* Forzamos que el buscador móvil solo se vea AQUÍ */
+    .mobile-search-container {
+        display: flex !important;
+        padding: 20px;
+        justify-content: center;
+        background: #f9f9f9;
+        border-bottom: 1px solid #eee;
+    }
+
+    .search-bar {
+        background: white;
+        border-radius: 50px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 90%;
+        border: 1px solid #ddd;
+    }
+
+    .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+}
